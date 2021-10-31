@@ -1,4 +1,8 @@
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 name: build
 
@@ -19,19 +23,19 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: check
-          
+
       - name: Run cargo fmt
         uses: actions-rs/cargo@v1
         with:
           command: fmt
           args: --all -- --check
-      
+
       - name: Run cargo clippy
         uses: actions-rs/cargo@v1
         with:
           command: clippy
           args: -- -D warnings -W clippy::nursery
-          
+
       - name: Run cargo test
         uses: actions-rs/cargo@v1
         with:
