@@ -21,6 +21,9 @@
 //! let m = it.next().unwrap();
 //! assert_eq!((1, 4, 0), (m.start(), m.end(), m.pattern()));
 //!
+//! let m = it.next().unwrap();
+//! assert_eq!((1, 4, 0), (m.start(), m.end(), m.pattern()));
+//!
 //! assert_eq!(None, it.next());
 //! ```
 
